@@ -6,20 +6,20 @@
     <title>Embersol - Software Solutions</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             color: #333;
             scroll-behavior: smooth;
         }
         header {
-            background-color: #003366;
+            background: linear-gradient(135deg, #003366, #00509e);
             color: white;
-            padding: 20px;
+            padding: 30px 20px;
             text-align: center;
         }
         header h1 {
-            font-size: 2.5em;
+            font-size: 2.8em;
             margin: 0;
         }
         header p {
@@ -31,28 +31,35 @@
             padding: 10px 20px;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         nav a {
             color: white;
             text-decoration: none;
             margin: 0 15px;
             font-size: 1em;
+            padding: 10px 15px;
+            border-radius: 5px;
         }
         nav a:hover {
-            text-decoration: underline;
+            background-color: #003366;
         }
         main {
             padding: 40px 20px;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
         }
         .hero {
             text-align: center;
-            padding: 50px 20px;
-            background-color: #0077cc;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #00509e, #0077cc);
             color: white;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .hero h2 {
-            font-size: 2em;
+            font-size: 2.2em;
             margin: 0 0 10px;
         }
         .hero p {
@@ -61,46 +68,69 @@
         }
         .content {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             flex-wrap: wrap;
-            margin-top: 30px;
+            gap: 20px;
         }
         .content .card {
             background: white;
             padding: 20px;
-            margin: 10px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
             width: 300px;
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .content .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
         .content .card h3 {
-            margin: 10px 0;
+            margin: 15px 0;
+            font-size: 1.5em;
         }
         .content .card p {
             margin: 10px 0 0;
+            color: #555;
         }
         .process {
-            background: #fff;
-            padding: 20px;
-            margin: 30px 0;
+            background: white;
+            padding: 30px 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+        .process ul {
+            margin: 20px 0 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        .process ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .process ul li::before {
+            content: '\2022';
+            color: #00509e;
+            font-weight: bold;
+            display: inline-block;
+            width: 20px;
+            margin-left: -20px;
         }
         .contact-cards {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             flex-wrap: wrap;
-            margin-top: 20px;
+            gap: 20px;
         }
         .contact-card {
             background: white;
             padding: 20px;
-            margin: 10px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            width: 250px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
+            width: 300px;
         }
         .contact-card img {
             border-radius: 50%;
@@ -119,12 +149,10 @@
             margin: 0;
         }
         @media screen and (max-width: 768px) {
-            nav {
-                flex-direction: column; /* Stack the navigation links vertically */
-                align-items: center; /* Center the links */
-            }
             nav a {
-                margin: 10px 0; /* Add spacing between links */
+                margin: 5px 0;
+                display: block;
+                text-align: center;
             }
         }
     </style>
@@ -160,22 +188,11 @@
                 <p>Create dynamic and responsive web applications.</p>
             </div>
         </section>
-        <section id="about">
+        <section id="about" class="process">
             <h2>About Embersol</h2>
             <p>Embersol specializes in crafting innovative and reliable software solutions. We are passionate about bringing your ideas to life with expertise in iOS, Android, and web development.</p>
         </section>
-        <section class="process">
-            <h2>Our Discovery Process</h2>
-            <p>We believe that understanding your business is key to creating the perfect solution. Our discovery process includes:</p>
-            <ul>
-                <li>Initial consultation to understand your goals and challenges.</li>
-                <li>In-depth analysis of your business needs and target audience.</li>
-                <li>Collaborative brainstorming to identify the best software solutions.</li>
-                <li>Presentation of a customized plan tailored to your requirements.</li>
-            </ul>
-            <p>With Embersol, you're not just getting software; you're gaining a partner dedicated to your success.</p>
-        </section>
-        <section id="technologies">
+        <section id="technologies" class="process">
             <h2>Technologies We Use</h2>
             <p>At Embersol, we harness the power of modern technologies to deliver high-quality software solutions. Our expertise includes:</p>
             <ul>
@@ -189,9 +206,8 @@
                 <li>Docker & Kubernetes</li>
                 <li>RESTful API Development</li>
             </ul>
-            <p>In addition to these, our diverse team brings a wealth of experience in other technologies. If you have an existing product or unique requirements, consult us to see how Embersol can be the right fit for your needs.</p>
         </section>
-        <section id="embercore">
+        <section id="embercore" class="process">
             <h2>Introducing EmberCore</h2>
             <p>EmberCore is our Kotlin Multiplatform-based product designed to dramatically accelerate project development times. With its proprietary DSL for generating feature templates, EmberCore enables Embersol to deliver basic functionality instantaneously. This revolutionary tool is currently a work in progress, and we are excited to bring it to our clients soon. Stay tuned for updates!</p>
         </section>
